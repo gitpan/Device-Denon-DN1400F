@@ -1,0 +1,10 @@
+Changes
+DN1400F.pm
+DN1400F.pm.POSIX
+DN1400F.pm.SerialPort
+MANIFEST
+MANIFEST.SKIP
+Makefile.PL
+README
+play.pl
+test.pl
