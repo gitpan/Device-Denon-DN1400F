@@ -12,7 +12,7 @@ use Time::HiRes qw(usleep time);
 @ISA = qw(Exporter);
 @EXPORT_OK = qw();
 %EXPORT_TAGS = ('all' => \@EXPORT_OK);
-$VERSION = '0.01';
+$VERSION = '0.02';
 
 %COMMANDS = (
 	MOVE_FRONT				=> {
@@ -649,17 +649,33 @@ Device::Denon::DN1400F - Control a Denon DN-1400F CD player
 
   my $denon = new Device::Denon::DN1400F(
   				SerialPort	=> '/dev/ttyS0',
-				Id			=> 0,
+				Id		=> $deviceid,
 					);
 
-  $denon->load_disc(0, 4); # turntable number, cd number
+  $denon->load_disc($drive, $discno);
+  $denon->drive_play($drive, $track);
+  $denon->drive_pause($drive, $paused);
+  $denon->drive_stop($drive);
+  $denon->unload_disc($drive, $discno);
+  $denon->unload_discs;
+
+  print $denon->drive_status($drive);
+  print $denon->drive_subcode_qchannel($drive);
+  print $denon->toc_data_long($drive);
+  print $denon->toc_data_short($drive);
+
   $denon->debug;
+  $denon->reset;
+  $denon->move_front;
 
 =head1 DESCRIPTION
 
 This module gives an object oriented interface to control the Denon
 DN-1400F, an RS232 controlled 200 CD two-turntable jukebox designed
 for nonstop playout.
+
+Many methods are available, it is currently still best to browse the
+source to find the details.
 
 =head2 EXPORT
 

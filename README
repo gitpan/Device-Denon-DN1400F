@@ -1,16 +1,10 @@
 Device/Denon/DN1400F version 0.01
 =================================
 
-The README is used to introduce the module and provide instructions on
-how to install the module, any machine dependencies it may have (for
-example C compilers and installed libraries) and any other information
-that should be provided before the module is installed.
-
-A README file is required for CPAN modules since CPAN extracts the
-README file from a module distribution so that people browsing the
-archive can use it get an idea of the modules uses. It is usually a
-good idea to provide version information here so that people can
-decide whether fixes for the module are worth downloading.
+The DN1400F is a high end computer controlled jukebox CD player. This
+Perl module provides a userspace interface to the RS232 (and possibly
+RS485) protocols used by the device. It provides a fairly low level
+interface allowing CDs to be loaded, unloaded, played, paused, etc.
 
 INSTALLATION
 
@@ -25,11 +19,12 @@ DEPENDENCIES
 
 This module requires these other modules and libraries:
 
-  blah blah blah
+  Device::SerialPort
 
 COPYRIGHT AND LICENCE
 
-Put the correct copyright and licence information here.
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
 
-Copyright (C) 2003 A. U. Thor blah blah blah
+Copyright (C) 2003 Shevek <shevek@cpan.org>
 

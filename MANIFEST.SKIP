@@ -1,3 +1,5 @@
+DN1400F.pm.POSIX
+DN1400F.pm.SerialPort
 ^blib/
 ^Makefile$
 ^Makefile\.[a-z]+$
@@ -5,6 +7,7 @@
 CVS/.*
 ,v$
 ^tmp/
+^old/
 \.old$
 \.bak$
 ~$

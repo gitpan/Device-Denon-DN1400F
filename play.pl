@@ -14,12 +14,12 @@ my $player = new Device::Denon::DN1400F(
 
 # $player->clear_changer_buffer;
 
-$player->unload_discs;
+$player->move_front; exit;
+# $player->unload_discs; exit;
 # $player->reset;
 # $player->load_disc(0, 106);
 # $player->debug;
 # $player->unload_disc(0, 2);
-# $player->move_front;
 # print join(", ", $player->changer_version), "\n";
 # print join(", ", $player->loaded_discs), "\n";
 # print Dumper($player->status);
@@ -34,10 +34,8 @@ $player->unload_discs;
 
 # $player->drive_pause(0, 0);
 
-exit;
+# exit;
 
-$player->unload_discs;
-sleep 20;
-$player->load_disc(0, 101);
-sleep 20;
-$player->drive_play(0, 1);
+# $player->unload_discs ; sleep 22;
+# $player->load_disc(0, 108); sleep 22;
+$player->drive_play(0, 6);
